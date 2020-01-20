@@ -1,3 +1,3 @@
 # Yahtzee
-Yahtzee opdrachten
-Dit is onze Yathzee opdracht
+Yahtzee stap 1
+Dit zijn onze Yahtzee stap 1 opdrachten
