@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    
+
     <Grid>
 
         <Grid.RowDefinitions>
@@ -35,8 +35,9 @@
             <ColumnDefinition Width="15*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
+
         <Canvas Background="WhiteSmoke" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" Grid.RowSpan="12"></Canvas>
-        
+
         <Button x:Name="Throw" Click="Throw_click" Grid.Column="0" Grid.Row="11" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="5" CornerRadius="50, 50, 0, 0">
             <TextBlock HorizontalAlignment="Center" Text="Throw" FontSize="50em"/>
         </Button>
@@ -59,26 +60,34 @@
             <TextBlock HorizontalAlignment="Center" Text="Game Rules" FontSize="40em"/>
         </Button>
 
+        <Button x:Name="keuzeGroteStraat" Click="KeuzeGroteStraat_click" Grid.Column="4" Grid.Row="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="100">
+            <TextBlock HorizontalAlignment="Center" Text="Kies" FontSize="40em"/>
+        </Button>
+        <Button x:Name="keuzeKleineStraat" Click="KeuzeKleineStraat_click" Grid.Column="4" Grid.Row="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="100">
+            <TextBlock HorizontalAlignment="Center" Text="Kies" FontSize="40em"/>
+        </Button>
+        
         <TextBox x:Name="textboxYahtzee" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Text="Yahtzee" FontSize="50em" IsReadOnly="True"></TextBox>
-        <TextBox x:Name="textboxYahtzeeScore" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="Score" FontSize="50em" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="textboxYahtzeeScore" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="0" FontSize="50em" IsReadOnly="True"></TextBox>
         <TextBox x:Name="textboxFullHouse" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Text="Full-House" FontSize="50em" IsReadOnly="True"></TextBox>
-        <TextBox x:Name="textboxFullHouseScore" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="Score" FontSize="50em" IsReadOnly="True"></TextBox>
-        <TextBox x:Name="textboxCarre" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Text="Carre" FontSize="50em" IsReadOnly="True"></TextBox>
-        <TextBox x:Name="textboxCarreScore" Grid.Column="2" Grid.Row="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="Score" FontSize="50em" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="textboxFullHouseScore" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="0" FontSize="50em" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="textboxCarre" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Text="Carré" FontSize="50em" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="textboxCarreScore" Grid.Column="2" Grid.Row="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="0" FontSize="50em" IsReadOnly="True"></TextBox>
         <TextBox x:Name="textboxGroteStraat" Grid.Column="0" Grid.Row="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Text="Grote Straat" FontSize="50em" IsReadOnly="True"></TextBox>
-        <TextBox x:Name="textboxGroteStraatScore" Grid.Column="2" Grid.Row="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="Score" FontSize="50em" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="textboxGroteStraatScore" Grid.Column="2" Grid.Row="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="0" FontSize="50em" IsReadOnly="True"></TextBox>
         <TextBox x:Name="textboxKleineStraat" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Text="Kleine Straat" FontSize="50em" IsReadOnly="True"></TextBox>
-        <TextBox x:Name="textboxKleineStraatScore" Grid.Column="2" Grid.Row="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="Score" FontSize="50em" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="textboxKleineStraatScore" Grid.Column="2" Grid.Row="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="0" FontSize="50em" IsReadOnly="True"></TextBox>
         <TextBox x:Name="textboxThreeOfAKind" Grid.Column="0" Grid.Row="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Text="Three-Of-A-Kind" FontSize="50em" IsReadOnly="True"></TextBox>
-        <TextBox x:Name="textboxThreeOfAKindScore" Grid.Column="2" Grid.Row="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="Score" FontSize="50em" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="textboxThreeOfAKindScore" Grid.Column="2" Grid.Row="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="0" FontSize="50em" IsReadOnly="True"></TextBox>
         <TextBox x:Name="textboxChance" Grid.Column="0" Grid.Row="9" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Text="Chance" FontSize="50em" IsReadOnly="True"></TextBox>
-        <TextBox x:Name="textboxChanceScore" Grid.Column="2" Grid.Row="9" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="Score" FontSize="50em" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="textboxChanceScore" Grid.Column="2" Grid.Row="9" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="0" FontSize="50em" IsReadOnly="True"></TextBox>
 
         <TextBlock x:Name="dice1" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="1" FontSize="100em" ></TextBlock>
         <TextBlock x:Name="dice2" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="2" FontSize="100em" ></TextBlock>
         <TextBlock x:Name="dice3" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="3" FontSize="100em" ></TextBlock>
         <TextBlock x:Name="dice4" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="4" FontSize="100em" ></TextBlock>
         <TextBlock x:Name="dice5" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="5" FontSize="100em" ></TextBlock>
+        
 
     </Grid>
 
