@@ -10,8 +10,9 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1.2*"></RowDefinition>
             <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -29,7 +30,7 @@
             <Bold><Run Text="SpelRegels" /></Bold>
         </TextBlock>
         
-        <TextBlock x:Name="textblockSpelRegels" Grid.Row="1" FontSize="25em">
+        <TextBlock x:Name="textblockSpelRegels" Grid.Row="1" FontSize="20em">
             <Bold><Run Text="Het doel van het spel"/><LineBreak /></Bold>
             <Run Text="Doel van het spel is proberen combinaties met de dobbelstenen te gooien, zodanig dat ze passen in de 13 categorieën en" /><LineBreak /> 
             <Run Text="zo de hoogste score opleveren. Bij iedere beurt mag u maximaal drie keer gooien," /><LineBreak />
@@ -52,6 +53,6 @@
             <Run Text="Winnaar is de speler met de meeste punten nadat alle spelers hun 13 vakjes hebben ingevuld " /><LineBreak />
             <Run Text=" en hun scores en bonuspunten hebben opgeteld" />
         </TextBlock>
-
+        <Image Source="Assets/yahtzeeimg.jpg" Grid.Column="0" Grid.Row="3"></Image>
     </Grid>
 </Page>
