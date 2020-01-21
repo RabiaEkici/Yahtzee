@@ -1,0 +1,141 @@
+﻿<Page
+    x:Class="Yahtzee.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Yahtzee"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+                <RowDefinition Height="15*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"></ColumnDefinition>
+                <ColumnDefinition Width="10*"></ColumnDefinition>
+                <ColumnDefinition Width="10*"></ColumnDefinition>
+                <ColumnDefinition Width="10*"></ColumnDefinition>
+                <ColumnDefinition Width="10*"></ColumnDefinition>
+                <ColumnDefinition Width="10*"></ColumnDefinition>
+                <ColumnDefinition Width="15*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+        <Canvas Background="WhiteSmoke" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" Grid.RowSpan="12"></Canvas>
+
+        <Button x:Name="Throw" Click="Throw_click" Grid.Column="0" Grid.Row="11" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="5" CornerRadius="50, 50, 0, 0">
+            <TextBlock HorizontalAlignment="Center" Text="Throw" FontSize="50em"/>
+        </Button>
+        <Button x:Name="lock1" Click="Lock1_click" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="25, 25, 50, 50">
+            <TextBlock HorizontalAlignment="Center" Text="Lock" FontSize="50em"/>
+        </Button>
+        <Button x:Name="lock2" Click="Lock2_click" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="25, 25, 50, 50">
+            <TextBlock HorizontalAlignment="Center" Text="Lock" FontSize="50em"/>
+        </Button>
+        <Button x:Name="lock3" Click="Lock3_click" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="25, 25, 50, 50">
+            <TextBlock HorizontalAlignment="Center" Text="Lock" FontSize="50em"/>
+        </Button>
+        <Button x:Name="lock4" Click="Lock4_click" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="25, 25, 50, 50">
+            <TextBlock HorizontalAlignment="Center" Text="Lock" FontSize="50em"/>
+        </Button>
+        <Button x:Name="lock5" Click="Lock5_click" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="25, 25, 50, 50">
+            <TextBlock HorizontalAlignment="Center" Text="Lock" FontSize="50em"/>
+        </Button>
+        <Button x:Name="rules" Click="Rules_click" Grid.Column="6" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="100">
+            <TextBlock HorizontalAlignment="Center" Text="Game Rules" FontSize="40em"/>
+        </Button>
+
+        <TextBox x:Name="textboxYahtzee" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Text="Yahtzee" FontSize="50em" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="textboxYahtzeeScore" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="Score" FontSize="50em" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="textboxFullHouse" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Text="Full-House" FontSize="50em" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="textboxFullHouseScore" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="Score" FontSize="50em" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="textboxCarre" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Text="Carre" FontSize="50em" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="textboxCarreScore" Grid.Column="2" Grid.Row="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="Score" FontSize="50em" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="textboxGroteStraat" Grid.Column="0" Grid.Row="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Text="Grote Straat" FontSize="50em" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="textboxGroteStraatScore" Grid.Column="2" Grid.Row="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="Score" FontSize="50em" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="textboxKleineStraat" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Text="Kleine Straat" FontSize="50em" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="textboxKleineStraatScore" Grid.Column="2" Grid.Row="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="Score" FontSize="50em" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="textboxThreeOfAKind" Grid.Column="0" Grid.Row="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Text="Three-Of-A-Kind" FontSize="50em" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="textboxThreeOfAKindScore" Grid.Column="2" Grid.Row="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="Score" FontSize="50em" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="textboxChance" Grid.Column="0" Grid.Row="9" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Text="Chance" FontSize="50em" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="textboxChanceScore" Grid.Column="2" Grid.Row="9" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="Score" FontSize="50em" IsReadOnly="True"></TextBox>
+
+        <Image x:Name="column1dice1" Source="Assets/dice1.png" Canvas.ZIndex="10" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column1dice2" Source="Assets/dice2.png" Canvas.ZIndex="10" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column1dice3" Source="Assets/dice3.png" Canvas.ZIndex="10" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column1dice4" Source="Assets/dice4.png" Canvas.ZIndex="10" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column1dice5" Source="Assets/dice5.png" Canvas.ZIndex="10" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column1dice6" Source="Assets/dice6.png" Canvas.ZIndex="10" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column2dice1" Source="Assets/dice1.png" Canvas.ZIndex="10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column2dice2" Source="Assets/dice2.png" Canvas.ZIndex="10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column2dice3" Source="Assets/dice3.png" Canvas.ZIndex="10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column2dice4" Source="Assets/dice4.png" Canvas.ZIndex="10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column2dice5" Source="Assets/dice5.png" Canvas.ZIndex="10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column2dice6" Source="Assets/dice6.png" Canvas.ZIndex="10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column3dice1" Source="Assets/dice1.png" Canvas.ZIndex="10" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column3dice2" Source="Assets/dice2.png" Canvas.ZIndex="10" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column3dice3" Source="Assets/dice3.png" Canvas.ZIndex="10" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column3dice4" Source="Assets/dice4.png" Canvas.ZIndex="10" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column3dice5" Source="Assets/dice5.png" Canvas.ZIndex="10" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column3dice6" Source="Assets/dice6.png" Canvas.ZIndex="10" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column4dice1" Source="Assets/dice1.png" Canvas.ZIndex="10" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column4dice2" Source="Assets/dice2.png" Canvas.ZIndex="10" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column4dice3" Source="Assets/dice3.png" Canvas.ZIndex="10" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column4dice4" Source="Assets/dice4.png" Canvas.ZIndex="10" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column4dice5" Source="Assets/dice5.png" Canvas.ZIndex="10" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column4dice6" Source="Assets/dice6.png" Canvas.ZIndex="10" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column5dice1" Source="Assets/dice1.png" Canvas.ZIndex="10" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column5dice2" Source="Assets/dice2.png" Canvas.ZIndex="10" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column5dice3" Source="Assets/dice3.png" Canvas.ZIndex="10" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column5dice4" Source="Assets/dice4.png" Canvas.ZIndex="10" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column5dice5" Source="Assets/dice5.png" Canvas.ZIndex="10" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column5dice6" Source="Assets/dice6.png" Canvas.ZIndex="10" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Stretch"/>
+
+        <Image x:Name="column1roodDice1" Source="Assets/roodDice1.png" Canvas.ZIndex="10" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column1roodDice2" Source="Assets/roodDice2.png" Canvas.ZIndex="10" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column1roodDice3" Source="Assets/roodDice3.png" Canvas.ZIndex="10" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column1roodDice4" Source="Assets/roodDice4.png" Canvas.ZIndex="10" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column1roodDice5" Source="Assets/roodDice5.png" Canvas.ZIndex="10" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column1roodDice6" Source="Assets/roodDice6.png" Canvas.ZIndex="10" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column2roodDice1" Source="Assets/roodDice1.png" Canvas.ZIndex="10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column2roodDice2" Source="Assets/roodDice2.png" Canvas.ZIndex="10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column2roodDice3" Source="Assets/roodDice3.png" Canvas.ZIndex="10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column2roodDice4" Source="Assets/roodDice4.png" Canvas.ZIndex="10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column2roodDice5" Source="Assets/roodDice5.png" Canvas.ZIndex="10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column2roodDice6" Source="Assets/roodDice6.png" Canvas.ZIndex="10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column3roodDice1" Source="Assets/roodDice1.png" Canvas.ZIndex="10" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column3roodDice2" Source="Assets/roodDice2.png" Canvas.ZIndex="10" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column3roodDice3" Source="Assets/roodDice3.png" Canvas.ZIndex="10" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column3roodDice4" Source="Assets/roodDice4.png" Canvas.ZIndex="10" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column3roodDice5" Source="Assets/roodDice5.png" Canvas.ZIndex="10" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column3roodDice6" Source="Assets/roodDice6.png" Canvas.ZIndex="10" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column4roodDice1" Source="Assets/roodDice1.png" Canvas.ZIndex="10" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column4roodDice2" Source="Assets/roodDice2.png" Canvas.ZIndex="10" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column4roodDice3" Source="Assets/roodDice3.png" Canvas.ZIndex="10" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column4roodDice4" Source="Assets/roodDice4.png" Canvas.ZIndex="10" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column4roodDice5" Source="Assets/roodDice5.png" Canvas.ZIndex="10" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column4roodDice6" Source="Assets/roodDice6.png" Canvas.ZIndex="10" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column5roodDice1" Source="Assets/roodDice1.png" Canvas.ZIndex="10" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column5roodDice2" Source="Assets/roodDice2.png" Canvas.ZIndex="10" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column5roodDice3" Source="Assets/roodDice3.png" Canvas.ZIndex="10" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column5roodDice4" Source="Assets/roodDice4.png" Canvas.ZIndex="10" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column5roodDice5" Source="Assets/roodDice5.png" Canvas.ZIndex="10" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Stretch"/>
+        <Image x:Name="column5roodDice6" Source="Assets/roodDice6.png" Canvas.ZIndex="10" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Stretch"/>
+
+    </Grid>
+
+</Page>
