@@ -8,6 +8,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+<!-- UI is helemaal gemaakt door Emre (degene die comments maakt is ook Emre en Sten) -->    
     <Grid>
 
         <Grid.RowDefinitions>
@@ -41,9 +42,10 @@
             <ColumnDefinition Width="15*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-
+        <!-- achtergrond kleur en plek-->
         <Canvas Background="WhiteSmoke" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" Grid.RowSpan="18"></Canvas>
-
+        
+        <!-- -->
         <Button x:Name="Throw" Click="Throw_click" Grid.Column="0" Grid.Row="18" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="5" CornerRadius="50, 50, 0, 0">
             <TextBlock HorizontalAlignment="Center" Text="Throw" FontSize="30em"/>
         </Button>
@@ -62,7 +64,7 @@
         <Button x:Name="lock5" Click="Lock5_click" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="25, 25, 50, 50">
             <TextBlock HorizontalAlignment="Center" Text="Lock" FontSize="30em"/>
         </Button>
-        <Button x:Name="rules" Click="Rules_click" Grid.Column="6" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="70,0,0,20">
+        <Button x:Name="rules" Click="Rules_click" Grid.Column="6" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="100,0,0,5" BorderThickness="1" BorderBrush="Black">
             <TextBlock HorizontalAlignment="Center" Text="Game Rules" FontSize="40em"/>
         </Button>
         
@@ -134,12 +136,29 @@
         <TextBox x:Name="textboxChance" Grid.Column="0" Grid.Row="15" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Text="Chance" FontSize="30em" IsReadOnly="True"></TextBox>
         <TextBox x:Name="textboxChanceScore" Grid.Column="2" Grid.Row="15" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="0" FontSize="30em" IsReadOnly="True"></TextBox>
 
-        <TextBlock x:Name="dice1" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="1" FontSize="100em" ></TextBlock>
-        <TextBlock x:Name="dice2" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="2" FontSize="100em" ></TextBlock>
-        <TextBlock x:Name="dice3" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="3" FontSize="100em" ></TextBlock>
-        <TextBlock x:Name="dice4" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="4" FontSize="100em" ></TextBlock>
-        <TextBlock x:Name="dice5" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="5" FontSize="100em" ></TextBlock>
+        <TextBox x:Name="timesEnen" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="0" FontSize="30em" IsReadOnly="True" ></TextBox>
+        <TextBox x:Name="timesTweeen" Grid.Column="3" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="0" FontSize="30em" IsReadOnly="True" ></TextBox>
+        <TextBox x:Name="timesDrien" Grid.Column="3" Grid.Row="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="0" FontSize="30em" IsReadOnly="True" ></TextBox>
+        <TextBox x:Name="timesVieren" Grid.Column="3" Grid.Row="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="0" FontSize="30em" IsReadOnly="True" ></TextBox>
+        <TextBox x:Name="timesVijfen" Grid.Column="3" Grid.Row="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="0" FontSize="30em" IsReadOnly="True" ></TextBox>
+        <TextBox x:Name="timesZessen" Grid.Column="3" Grid.Row="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="0" FontSize="30em" IsReadOnly="True" ></TextBox>
+        <TextBox x:Name="timesYahtzee" Grid.Column="3" Grid.Row="9" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="0" FontSize="30em" IsReadOnly="True" ></TextBox>
+        <TextBox x:Name="timesFullHouse" Grid.Column="3" Grid.Row="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="0" FontSize="30em" IsReadOnly="True" ></TextBox>
+        <TextBox x:Name="timesCarre" Grid.Column="3" Grid.Row="11" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="0" FontSize="30em" IsReadOnly="True" ></TextBox>
+        <TextBox x:Name="timesGroteStraat" Grid.Column="3" Grid.Row="12" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="0" FontSize="30em" IsReadOnly="True" ></TextBox>
+        <TextBox x:Name="timesKleineStraat" Grid.Column="3" Grid.Row="13" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="0" FontSize="30em" IsReadOnly="True" ></TextBox>
+        <TextBox x:Name="timesThreeOfAKind" Grid.Column="3" Grid.Row="14" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="0" FontSize="30em" IsReadOnly="True" ></TextBox>
+        <TextBox x:Name="timesChance" Grid.Column="3" Grid.Row="15" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="1" PlaceholderText="0" FontSize="30em" IsReadOnly="True" ></TextBox>
 
+        <TextBlock x:Name="dice1" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="0" FontSize="100em" ></TextBlock>
+        <TextBlock x:Name="dice2" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="0" FontSize="100em" ></TextBlock>
+        <TextBlock x:Name="dice3" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="0" FontSize="100em" ></TextBlock>
+        <TextBlock x:Name="dice4" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="0" FontSize="100em" ></TextBlock>
+        <TextBlock x:Name="dice5" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="0" FontSize="100em" ></TextBlock>
+
+        <TextBlock x:Name="title1" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Text="Name" FontSize="25em"></TextBlock>
+        <TextBlock x:Name="title2" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Text="Score" FontSize="25em"></TextBlock>
+        <TextBlock x:Name="title3" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Text="Times thrown" FontSize="25em"></TextBlock>
 
     </Grid>
 

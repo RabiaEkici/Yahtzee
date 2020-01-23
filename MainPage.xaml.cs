@@ -31,23 +31,80 @@ namespace Yahtzee
 
         }
 
-        int totalnumber;
-        int number1;
-        int number2;
-        int number3;
-        int number4;
-        int number5;
+        public int totalnumber;
+        public int number1;
+        public int number2;
+        public int number3;
+        public int number4;
+        public int number5;
+        public bool lock1active = false;
+        public bool lock2active = false;
+        public bool lock3active = false;
+        public bool lock4active = false;
+        public bool lock5active = false;
+        public bool chooseYahtzeeVisibility;
+        public bool chooseFullHouseVisibility;
+        public bool chooseCarreVisibility;
+        public bool chooseGroteStraatVisibility;
+        public bool chooseKleineStraatVisibility;
+        public bool chooseThreeOfAKindVisibility;
+        public bool chooseChanceVisibility;
         int[] i = new int[5];
 
+        public void ButtonsVisibilityFalse()
+        {
+            chooseYahtzeeVisibility = false;
+            chooseFullHouseVisibility = false;
+            chooseCarreVisibility = false;
+            chooseGroteStraatVisibility = false;
+            chooseKleineStraatVisibility = false;
+            chooseThreeOfAKindVisibility = false;
+            chooseChanceVisibility = false;
+        }
+
+        public void ButtonsVisibilityTrue()
+        {
+            chooseYahtzeeVisibility = true;
+            chooseFullHouseVisibility = true;
+            chooseCarreVisibility = true;
+            chooseGroteStraatVisibility = true;
+            chooseKleineStraatVisibility = true;
+            chooseThreeOfAKindVisibility = true;
+            chooseChanceVisibility = true;
+        }
+
+        public void CalculateVisibility()
+        {
+            if (chooseChanceVisibility == true)
+            {
+                chooseEnen.Visibility = Visibility.Collapsed;
+                chooseTweeen.Visibility = Visibility.Collapsed;
+                chooseDrien.Visibility = Visibility.Collapsed;
+                chooseVieren.Visibility = Visibility.Collapsed;
+                chooseVijfen.Visibility = Visibility.Collapsed;
+                chooseZessen.Visibility = Visibility.Collapsed;
+                chooseYahtzee.Visibility = Visibility.Collapsed;
+                chooseFullHouse.Visibility = Visibility.Collapsed;
+                chooseCarre.Visibility = Visibility.Collapsed;
+                chooseGroteStraat.Visibility = Visibility.Collapsed;
+                chooseKleineStraat.Visibility = Visibility.Collapsed;
+                chooseThreeOfAKind.Visibility = Visibility.Collapsed;
+                chooseChance.Visibility = Visibility.Collapsed;
+
+            }
+        }
+      
+        //degene die comments maakt zijn Emre en Sten
+        //Sten's opdrachten beginnen hier
         public void Throw_click(object sender, RoutedEventArgs e)
         {
 
             Random rnd = new Random();
-            number1 = rnd.Next(1, 7);
-            number2 = rnd.Next(1, 7);
-            number3 = rnd.Next(1, 7);
-            number4 = rnd.Next(1, 7);
-            number5 = rnd.Next(1, 7);
+            number1 =  rnd.Next(1, 7);
+            number2 =  rnd.Next(1, 7);
+            number3 =  rnd.Next(1, 7);
+            number4 =  rnd.Next(1, 7);
+            number5 =  rnd.Next(1, 7);
             dice1.Text = "";
             dice2.Text = "";
             dice3.Text = "";
@@ -69,6 +126,9 @@ namespace Yahtzee
             dice4.Text += diceroll4;
             dice5.Text += diceroll5;
 
+            ButtonsVisibilityFalse();
+
+            // Emre's opdrachten beginnen hier
             string section1 = dice1.Text;
             string section2 = dice2.Text;
             string section3 = dice3.Text;
@@ -77,7 +137,7 @@ namespace Yahtzee
            
 
             /*verandert nummer in dice, je kan section1 (deze variabelen kunnen gewoon verwijdert worden) veranderen naar number1 enz. maar anders moet ik dat aanpassen wat weer veel tijd gaat kosten.
-              Dus doe ik dat nu niet.*/
+              Dus doe ik dat nu niet en het werkt nu gewoon.*/
 
             if (section1 == 1.ToString())
             {
@@ -209,7 +269,22 @@ namespace Yahtzee
                 dice5.Text = "⚅";
             }
 
+            ButtonsVisibilityFalse();
 
+           chooseEnen.Visibility = Visibility.Visible;
+           chooseTweeen.Visibility = Visibility.Visible;
+           chooseDrien.Visibility = Visibility.Visible;
+           chooseVieren.Visibility = Visibility.Visible;
+           chooseVijfen.Visibility = Visibility.Visible;
+           chooseZessen.Visibility = Visibility.Visible;
+           chooseYahtzee.Visibility = Visibility.Visible;
+           chooseFullHouse.Visibility = Visibility.Visible;
+           chooseCarre.Visibility = Visibility.Visible;
+           chooseGroteStraat.Visibility = Visibility.Visible;
+           chooseKleineStraat.Visibility = Visibility.Visible;
+           chooseThreeOfAKind.Visibility = Visibility.Visible;
+           chooseChance.Visibility = Visibility.Visible;
+            
         }
 
         private void Rules_click(object sender, RoutedEventArgs e)
@@ -245,35 +320,105 @@ namespace Yahtzee
 
         private void ChooseEnen_Click(object sender, RoutedEventArgs e)
         {
+            i[0] = number1;
+            i[1] = number2;
+            i[2] = number3;
+            i[3] = number4;
+            i[4] = number5;
 
+            Array.Sort(i);
+
+            if (i[0] == 1 && i[1] != 1 && i[2] != 1 && i[3] != 1 && i[4] != 1)
+            {
+                textboxEnenScore.Text = 1.ToString();
+                ButtonsVisibilityTrue();
+            }
+            else if (i[0] == 1 && i[1] == 1 && i[2] != 1 && i[3] != 1 && i[4] != 1)
+            {
+                textboxEnenScore.Text = 2.ToString();
+                ButtonsVisibilityTrue();
+            }
+            else if (i[0] == 1 && i[1] == 1 && i[2] == 1 && i[3] != 1 && i[4] != 1)
+            {
+                textboxEnenScore.Text = 3.ToString();
+                ButtonsVisibilityTrue();
+            }
+            else if (i[0] == 1 && i[1] == 1 && i[2] == 1 && i[3] == 1 && i[4] != 1)
+            {
+                textboxEnenScore.Text = 4.ToString();
+                ButtonsVisibilityTrue();
+            }
+            else if (i[0] == 1 && i[1] == 1 && i[2] == 1 && i[3] == 1 && i[4] == 1)
+            {
+                textboxEnenScore.Text = 5.ToString();
+                ButtonsVisibilityTrue();
+            }
+
+            CalculateVisibility();
         }
 
         private void ChooseTweeen_click(object sender, RoutedEventArgs e)
         {
 
+            CalculateVisibility();
         }
 
         private void ChooseDrien_click(object sender, RoutedEventArgs e)
         {
-
+            CalculateVisibility();
         }
 
         private void ChooseVieren_click(object sender, RoutedEventArgs e)
         {
-
+            CalculateVisibility();
         }
 
         private void ChooseVijfen_click(object sender, RoutedEventArgs e)
         {
-
+            CalculateVisibility();
         }
 
         private void ChooseZessen_click(object sender, RoutedEventArgs e)
         {
+            i[0] = number1;
+            i[1] = number2;
+            i[2] = number3;
+            i[3] = number4;
+            i[4] = number5;
 
+            Array.Sort(i);
+
+            if (i[0] != 6 && i[1] != 6 && i[2] != 6 && i[3] != 6 && i[4] == 6)
+            {
+                textboxZessenScore.Text = 6.ToString();
+                ButtonsVisibilityTrue();
+            }
+            else if (i[0] != 1 && i[1] != 6 && i[2] != 6 && i[3] == 6 && i[4] == 6)
+            {
+                textboxZessenScore.Text = 12.ToString();
+                ButtonsVisibilityTrue();
+            }
+            else if (i[0] != 6 && i[1] != 6 && i[2] == 6 && i[3] == 6 && i[4] == 6)
+            {
+                textboxZessenScore.Text = 18.ToString();
+                ButtonsVisibilityTrue();
+            }
+            else if (i[0] != 6 && i[1] == 6 && i[2] == 6 && i[3] == 6 && i[4] == 6)
+            {
+                textboxZessenScore.Text = 24.ToString();
+                ButtonsVisibilityTrue();
+            }
+            else if (i[0] == 6 && i[1] == 6 && i[2] == 6 && i[3] == 6 && i[4] == 6)
+            {
+                textboxZessenScore.Text = 30.ToString();
+                ButtonsVisibilityTrue();
+            }
+
+
+            CalculateVisibility();
         }
 
-        private void ChooseYahtzee_click(object sender, RoutedEventArgs e)
+        public void ChooseYahtzee_click(object sender, RoutedEventArgs e)
         {
             if (number1 == 1 && number2 == 1 && number3 == 1 && number4 == 1 && number5 == 1 ||
                 number1 == 2 && number2 == 2 && number3 == 2 && number4 == 2 && number5 == 2 ||
@@ -282,9 +427,15 @@ namespace Yahtzee
                 number1 == 5 && number2 == 5 && number3 == 5 && number4 == 5 && number5 == 5 ||
                 number1 == 6 && number2 == 6 && number3 == 6 && number4 == 6 && number5 == 6)
             {
-                textboxYahtzeeScore.Text = 50.ToString();
+                textboxYahtzeeScore.Text += 50.ToString();
+                timesYahtzee.Text = timesYahtzee.Text + 1;
+                ButtonsVisibilityTrue();
             }
+
+            CalculateVisibility();
         }
+
+        
 
         private void ChooseFullHouse_click(object sender, RoutedEventArgs e)
         {
@@ -299,37 +450,45 @@ namespace Yahtzee
 
             Array.Sort(i);
 
-            if ((((i[0] == i[1]) && (i[1] == i[2])) &&
+            if (((i[0] == i[1]) && (i[1] == i[2]) &&
                  (i[3] == i[4]) &&
                  (i[2] != i[3])) ||
                 ((i[0] == i[1]) &&
-                 ((i[2] == i[3]) && (i[3] == i[4])) &&
+                 (i[2] == i[3]) && (i[3] == i[4]) &&
                  (i[1] != i[2])))
             {
                 textboxFullHouseScore.Text = 25.ToString();
+                timesFullHouse.Text = timesFullHouse.Text + 1;
+                ButtonsVisibilityTrue();
             }
 
+            CalculateVisibility();
         }
 
         private void ChooseCarre_click(object sender, RoutedEventArgs e)
         {
-            //four-of-a-kind(Carré)
-            if ((number1 == 1 && number2 == 1 && number3 == 1 && number4 == 1) ||
-                (number1 == 2 && number2 == 2 && number3 == 2 && number4 == 2) ||
-                (number1 == 3 && number2 == 3 && number3 == 3 && number4 == 3) ||
-                (number1 == 4 && number2 == 4 && number3 == 4 && number4 == 4) ||
-                (number1 == 5 && number2 == 5 && number3 == 5 && number4 == 5) ||
-                (number1 == 6 && number2 == 6 && number3 == 6 && number4 == 6) ||
-                (number2 == 1 && number3 == 1 && number4 == 1 && number5 == 1) ||
-                (number2 == 2 && number3 == 2 && number4 == 2 && number5 == 2) ||
-                (number2 == 3 && number3 == 3 && number4 == 3 && number5 == 3) ||
-                (number2 == 4 && number3 == 4 && number4 == 4 && number5 == 4) ||
-                (number2 == 5 && number3 == 5 && number4 == 5 && number5 == 5) ||
-                (number2 == 6 && number3 == 6 && number4 == 6 && number5 == 6))
-            {
-                totalnumber = number1 + number2 + number3 + number4 + number5;
-                textboxCarreScore.Text = totalnumber.ToString();
-            }
+            i[0] = number1;
+            i[1] = number2;
+            i[2] = number3;
+            i[3] = number4;
+            i[4] = number5;
+
+            Array.Sort(i);
+
+            if ((i[0] == 1 && i[1] == 1 && i[2] == 1 && i[3] == 1 && i[4] != 1) ||
+                (i[0] == 2 && i[1] == 2 && i[2] == 2 && i[3] == 2 && i[4] != 2) ||
+                (i[0] == 3 && i[1] == 3 && i[2] == 3 && i[3] == 3 && i[4] != 3) ||
+                (i[0] == 4 && i[1] == 4 && i[2] == 4 && i[3] == 4 && i[4] != 4) ||
+                (i[0] == 5 && i[1] == 5 && i[2] == 5 && i[3] == 5 && i[4] != 5) ||
+                (i[0] == 6 && i[1] == 6 && i[2] == 6 && i[3] == 6 && i[4] != 6))
+                {
+                    totalnumber = number1 + number2 + number3 + number4 + number5;
+                    textboxCarreScore.Text = totalnumber.ToString();
+                    timesCarre.Text = timesCarre.Text + 1;
+                    ButtonsVisibilityTrue();
+                }
+
+            CalculateVisibility();
         }
 
         private void ChooseGroteStraat_click(object sender, RoutedEventArgs e)
@@ -356,13 +515,19 @@ namespace Yahtzee
                  (i[4] == 6)))
             {
                 textboxGroteStraatScore.Text = 40.ToString();
+                timesGroteStraat.Text = timesGroteStraat.Text + 1;
+                ButtonsVisibilityTrue();
             }
+
+            CalculateVisibility();
+        
         }
 
         private void ChooseKleineStraat_click(object sender, RoutedEventArgs e)
         {
             //Kleine straat
-            //Source: https://www.codeproject.com/Articles/8657/A-Simple-Yahtzee-Game
+            //Source: https://www.codeproject.com/Articles/8657/A-Simple-Yahtzee-Game just the for the "for" loops
+
             i[0] = number1;
             i[1] = number2;
             i[2] = number3;
@@ -385,67 +550,77 @@ namespace Yahtzee
 
                     i[4] = temp;
                 }
-            }
 
-            if (((i[0] == 1) && (i[1] == 2) && (i[2] == 3) && (i[3] == 4)) ||
+                if (((i[0] == 1) && (i[1] == 2) && (i[2] == 3) && (i[3] == 4)) ||
                 ((i[0] == 2) && (i[1] == 3) && (i[2] == 4) && (i[3] == 5)) ||
                 ((i[0] == 3) && (i[1] == 4) && (i[2] == 5) && (i[3] == 6)) ||
                 ((i[1] == 1) && (i[2] == 2) && (i[3] == 3) && (i[4] == 4)) ||
                 ((i[1] == 2) && (i[2] == 3) && (i[3] == 4) && (i[4] == 5)) ||
                 ((i[1] == 3) && (i[2] == 4) && (i[3] == 5) && (i[4] == 6)))
-            {
-                textboxKleineStraatScore.Text = 30.ToString();
+                {
+                    textboxKleineStraatScore.Text = 30.ToString();
+                    chooseKleineStraat.Visibility = Visibility.Collapsed;
+                    ButtonsVisibilityTrue();
+                }
+                
             }
-            
+            timesKleineStraat.Text = timesKleineStraat.Text + 1;
+
+            CalculateVisibility();
         }
 
         private void ChooseThreeOfAKind_click(object sender, RoutedEventArgs e)
         {
-            if (number1 == 1 && number2 == 1 && number3 == 1 && number4 != 1 && number5 != 1 ||
-                number1 == 2 && number2 == 2 && number3 == 2 && number4 != 2 && number5 != 2 ||
-                number1 == 3 && number2 == 3 && number3 == 3 && number4 != 3 && number5 != 3 ||
-                number1 == 4 && number2 == 4 && number3 == 4 && number4 != 4 && number5 != 4 ||
-                number1 == 5 && number2 == 5 && number3 == 5 && number4 != 5 && number5 != 5 ||
-                number1 != 1 && number2 != 1 && number3 == 1 && number4 == 1 && number5 == 1 ||
-                number1 != 2 && number2 != 2 && number3 == 2 && number4 == 2 && number5 == 2 ||
-                number1 != 3 && number2 != 3 && number3 == 3 && number4 == 3 && number5 == 3 ||
-                number1 != 4 && number2 != 4 && number3 == 4 && number4 == 4 && number5 == 4 ||
-                number1 != 5 && number2 != 5 && number3 == 5 && number4 == 5 && number5 == 5 ||
-                number1 != 1 && number2 == 1 && number3 == 1 && number4 == 1 && number5 != 1 ||
-                number1 != 2 && number2 == 2 && number3 == 2 && number4 == 2 && number5 != 2 ||
-                number1 != 3 && number2 == 3 && number3 == 3 && number4 == 3 && number5 != 3 ||
-                number1 != 4 && number2 == 4 && number3 == 4 && number4 == 4 && number5 != 4 ||
-                number1 != 5 && number2 == 5 && number3 == 5 && number4 == 5 && number5 != 5 ||
-                number1 == 1 && number2 == 1 && number3 != 1 && number4 != 1 && number5 == 1 ||
-                number1 == 2 && number2 == 2 && number3 != 2 && number4 != 2 && number5 == 2 ||
-                number1 == 3 && number2 == 3 && number3 != 3 && number4 != 3 && number5 == 3 ||
-                number1 == 4 && number2 == 4 && number3 != 4 && number4 != 4 && number5 == 4 ||
-                number1 == 5 && number2 == 5 && number3 != 5 && number4 != 5 && number5 == 5 ||
-                number1 != 1 && number2 == 1 && number3 != 1 && number4 == 1 && number5 == 1 ||
-                number1 != 2 && number2 == 2 && number3 != 2 && number4 == 2 && number5 == 2 ||
-                number1 != 3 && number2 == 3 && number3 != 3 && number4 == 3 && number5 == 3 ||
-                number1 != 4 && number2 == 4 && number3 != 4 && number4 == 4 && number5 == 4 ||
-                number1 != 5 && number2 == 5 && number3 != 5 && number4 == 5 && number5 == 5 ||
-                number1 == 1 && number2 != 1 && number3 == 1 && number4 != 1 && number5 == 1 ||
-                number1 == 2 && number2 != 2 && number3 == 2 && number4 != 2 && number5 == 2 ||
-                number1 == 3 && number2 != 3 && number3 == 3 && number4 != 3 && number5 == 3 ||
-                number1 == 4 && number2 != 4 && number3 == 4 && number4 != 4 && number5 == 4 ||
-                number1 == 5 && number2 != 5 && number3 == 5 && number4 != 5 && number5 == 5 ||
-                number1 == 1 && number2 == 1 && number3 != 1 && number4 == 1 && number5 != 1 ||
-                number1 == 2 && number2 == 2 && number3 != 2 && number4 == 2 && number5 != 2 ||
-                number1 == 3 && number2 == 3 && number3 != 3 && number4 == 3 && number5 != 3 ||
-                number1 == 4 && number2 == 4 && number3 != 4 && number4 == 4 && number5 != 4 ||
-                number1 == 5 && number2 == 5 && number3 != 5 && number4 == 5 && number5 != 5)
+            i[0] = number1;
+            i[1] = number2;
+            i[2] = number3;
+            i[3] = number4;
+            i[4] = number5;
+
+            Array.Sort(i);
+
+            if (((i[0] == 1) && (i[1] == 1) && (i[2] == 1)) ||
+                ((i[0] == 2) && (i[1] == 2) && (i[2] == 2)) ||
+                ((i[0] == 3) && (i[1] == 3) && (i[2] == 3)) ||
+                ((i[0] == 4) && (i[1] == 4) && (i[2] == 4)) ||
+                ((i[0] == 5) && (i[1] == 5) && (i[2] == 5)) ||
+                ((i[0] == 6) && (i[1] == 6) && (i[2] == 6)) ||
+                ((i[1] == 1) && (i[2] == 1) && (i[3] == 1)) ||
+                ((i[1] == 2) && (i[2] == 2) && (i[3] == 2)) ||
+                ((i[1] == 3) && (i[2] == 3) && (i[3] == 3)) ||
+                ((i[1] == 4) && (i[2] == 4) && (i[3] == 4)) ||
+                ((i[1] == 5) && (i[2] == 5) && (i[3] == 5)) ||
+                ((i[1] == 6) && (i[2] == 6) && (i[3] == 6)) ||
+                ((i[2] == 1) && (i[3] == 1) && (i[4] == 1)) ||
+                ((i[2] == 2) && (i[3] == 2) && (i[4] == 2)) ||
+                ((i[2] == 3) && (i[3] == 3) && (i[4] == 3)) ||
+                ((i[2] == 4) && (i[3] == 4) && (i[4] == 4)) ||
+                ((i[2] == 5) && (i[3] == 5) && (i[4] == 5)) ||
+                ((i[2] == 6) && (i[3] == 6) && (i[4] == 6)))
                 {
                     totalnumber = number1 + number2 + number3 + number4 + number5;
                     textboxThreeOfAKindScore.Text = totalnumber.ToString();
+                    timesThreeOfAKind.Text = timesThreeOfAKind.Text + 1;
+                    ButtonsVisibilityTrue();
                 }
-        }
 
+            CalculateVisibility();
+        }
+        
         private void ChooseChance_click(object sender, RoutedEventArgs e)
         {
             totalnumber = number1 + number2 + number3 + number4 + number5;
             textboxChanceScore.Text = totalnumber.ToString();
+
+            if (chooseChance.Visibility == Visibility.Visible && textboxChanceScore.Text.Length >= 0.1)
+            {
+                timesChance.Text = timesChance.Text + 1;
+                ButtonsVisibilityTrue();
+            }
+
+            CalculateVisibility();
+        
         }
     }
 }
+    // Emre's opdrachten eindigen hier
