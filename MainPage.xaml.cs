@@ -71,8 +71,6 @@ namespace Yahtzee
             dice4.Text += diceroll4;
             dice5.Text += diceroll5;
 
-            ButtonsVisibilityFalse();
-
             // Emre's opdrachten beginnen hier
             string section1 = dice1.Text;
             string section2 = dice2.Text;
