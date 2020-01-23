@@ -37,62 +37,7 @@ namespace Yahtzee
         public int number3;
         public int number4;
         public int number5;
-        public bool lock1active = false;
-        public bool lock2active = false;
-        public bool lock3active = false;
-        public bool lock4active = false;
-        public bool lock5active = false;
-        public bool chooseYahtzeeVisibility;
-        public bool chooseFullHouseVisibility;
-        public bool chooseCarreVisibility;
-        public bool chooseGroteStraatVisibility;
-        public bool chooseKleineStraatVisibility;
-        public bool chooseThreeOfAKindVisibility;
-        public bool chooseChanceVisibility;
         int[] i = new int[5];
-
-        public void ButtonsVisibilityFalse()
-        {
-            chooseYahtzeeVisibility = false;
-            chooseFullHouseVisibility = false;
-            chooseCarreVisibility = false;
-            chooseGroteStraatVisibility = false;
-            chooseKleineStraatVisibility = false;
-            chooseThreeOfAKindVisibility = false;
-            chooseChanceVisibility = false;
-        }
-
-        public void ButtonsVisibilityTrue()
-        {
-            chooseYahtzeeVisibility = true;
-            chooseFullHouseVisibility = true;
-            chooseCarreVisibility = true;
-            chooseGroteStraatVisibility = true;
-            chooseKleineStraatVisibility = true;
-            chooseThreeOfAKindVisibility = true;
-            chooseChanceVisibility = true;
-        }
-
-        public void CalculateVisibility()
-        {
-            if (chooseChanceVisibility == true)
-            {
-                chooseEnen.Visibility = Visibility.Collapsed;
-                chooseTweeen.Visibility = Visibility.Collapsed;
-                chooseDrien.Visibility = Visibility.Collapsed;
-                chooseVieren.Visibility = Visibility.Collapsed;
-                chooseVijfen.Visibility = Visibility.Collapsed;
-                chooseZessen.Visibility = Visibility.Collapsed;
-                chooseYahtzee.Visibility = Visibility.Collapsed;
-                chooseFullHouse.Visibility = Visibility.Collapsed;
-                chooseCarre.Visibility = Visibility.Collapsed;
-                chooseGroteStraat.Visibility = Visibility.Collapsed;
-                chooseKleineStraat.Visibility = Visibility.Collapsed;
-                chooseThreeOfAKind.Visibility = Visibility.Collapsed;
-                chooseChance.Visibility = Visibility.Collapsed;
-
-            }
-        }
       
         //degene die comments maakt zijn Emre en Sten
         //Sten's opdrachten beginnen hier
@@ -318,106 +263,7 @@ namespace Yahtzee
 
         }
 
-        private void ChooseEnen_Click(object sender, RoutedEventArgs e)
-        {
-            i[0] = number1;
-            i[1] = number2;
-            i[2] = number3;
-            i[3] = number4;
-            i[4] = number5;
-
-            Array.Sort(i);
-
-            if (i[0] == 1 && i[1] != 1 && i[2] != 1 && i[3] != 1 && i[4] != 1)
-            {
-                textboxEnenScore.Text = 1.ToString();
-                ButtonsVisibilityTrue();
-            }
-            else if (i[0] == 1 && i[1] == 1 && i[2] != 1 && i[3] != 1 && i[4] != 1)
-            {
-                textboxEnenScore.Text = 2.ToString();
-                ButtonsVisibilityTrue();
-            }
-            else if (i[0] == 1 && i[1] == 1 && i[2] == 1 && i[3] != 1 && i[4] != 1)
-            {
-                textboxEnenScore.Text = 3.ToString();
-                ButtonsVisibilityTrue();
-            }
-            else if (i[0] == 1 && i[1] == 1 && i[2] == 1 && i[3] == 1 && i[4] != 1)
-            {
-                textboxEnenScore.Text = 4.ToString();
-                ButtonsVisibilityTrue();
-            }
-            else if (i[0] == 1 && i[1] == 1 && i[2] == 1 && i[3] == 1 && i[4] == 1)
-            {
-                textboxEnenScore.Text = 5.ToString();
-                ButtonsVisibilityTrue();
-            }
-
-            CalculateVisibility();
-        }
-
-        private void ChooseTweeen_click(object sender, RoutedEventArgs e)
-        {
-
-            CalculateVisibility();
-        }
-
-        private void ChooseDrien_click(object sender, RoutedEventArgs e)
-        {
-            CalculateVisibility();
-        }
-
-        private void ChooseVieren_click(object sender, RoutedEventArgs e)
-        {
-            CalculateVisibility();
-        }
-
-        private void ChooseVijfen_click(object sender, RoutedEventArgs e)
-        {
-            CalculateVisibility();
-        }
-
-        private void ChooseZessen_click(object sender, RoutedEventArgs e)
-        {
-            i[0] = number1;
-            i[1] = number2;
-            i[2] = number3;
-            i[3] = number4;
-            i[4] = number5;
-
-            Array.Sort(i);
-
-            if (i[0] != 6 && i[1] != 6 && i[2] != 6 && i[3] != 6 && i[4] == 6)
-            {
-                textboxZessenScore.Text = 6.ToString();
-                ButtonsVisibilityTrue();
-            }
-            else if (i[0] != 1 && i[1] != 6 && i[2] != 6 && i[3] == 6 && i[4] == 6)
-            {
-                textboxZessenScore.Text = 12.ToString();
-                ButtonsVisibilityTrue();
-            }
-            else if (i[0] != 6 && i[1] != 6 && i[2] == 6 && i[3] == 6 && i[4] == 6)
-            {
-                textboxZessenScore.Text = 18.ToString();
-                ButtonsVisibilityTrue();
-            }
-            else if (i[0] != 6 && i[1] == 6 && i[2] == 6 && i[3] == 6 && i[4] == 6)
-            {
-                textboxZessenScore.Text = 24.ToString();
-                ButtonsVisibilityTrue();
-            }
-            else if (i[0] == 6 && i[1] == 6 && i[2] == 6 && i[3] == 6 && i[4] == 6)
-            {
-                textboxZessenScore.Text = 30.ToString();
-                ButtonsVisibilityTrue();
-            }
-
-
-            CalculateVisibility();
-        }
-
+       
         public void ChooseYahtzee_click(object sender, RoutedEventArgs e)
         {
             if (number1 == 1 && number2 == 1 && number3 == 1 && number4 == 1 && number5 == 1 ||
@@ -435,7 +281,6 @@ namespace Yahtzee
             CalculateVisibility();
         }
 
-        
 
         private void ChooseFullHouse_click(object sender, RoutedEventArgs e)
         {
@@ -515,13 +360,10 @@ namespace Yahtzee
                  (i[4] == 6)))
             {
                 textboxGroteStraatScore.Text = 40.ToString();
-                timesGroteStraat.Text = timesGroteStraat.Text + 1;
-                ButtonsVisibilityTrue();
             }
 
-            CalculateVisibility();
         
-        }
+         }
 
         private void ChooseKleineStraat_click(object sender, RoutedEventArgs e)
         {
@@ -559,14 +401,9 @@ namespace Yahtzee
                 ((i[1] == 3) && (i[2] == 4) && (i[3] == 5) && (i[4] == 6)))
                 {
                     textboxKleineStraatScore.Text = 30.ToString();
-                    chooseKleineStraat.Visibility = Visibility.Collapsed;
-                    ButtonsVisibilityTrue();
                 }
                 
             }
-            timesKleineStraat.Text = timesKleineStraat.Text + 1;
-
-            CalculateVisibility();
         }
 
         private void ChooseThreeOfAKind_click(object sender, RoutedEventArgs e)
@@ -600,25 +437,13 @@ namespace Yahtzee
                 {
                     totalnumber = number1 + number2 + number3 + number4 + number5;
                     textboxThreeOfAKindScore.Text = totalnumber.ToString();
-                    timesThreeOfAKind.Text = timesThreeOfAKind.Text + 1;
-                    ButtonsVisibilityTrue();
                 }
-
-            CalculateVisibility();
         }
         
         private void ChooseChance_click(object sender, RoutedEventArgs e)
         {
             totalnumber = number1 + number2 + number3 + number4 + number5;
             textboxChanceScore.Text = totalnumber.ToString();
-
-            if (chooseChance.Visibility == Visibility.Visible && textboxChanceScore.Text.Length >= 0.1)
-            {
-                timesChance.Text = timesChance.Text + 1;
-                ButtonsVisibilityTrue();
-            }
-
-            CalculateVisibility();
         
         }
     }
