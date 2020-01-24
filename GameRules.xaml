@@ -1,0 +1,60 @@
+﻿<Page
+    x:Class="Yahtzee.GameRules"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Yahtzee"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <!-- GameRules UI gemaakt door Emre-->
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.2*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Canvas Background="WhiteSmoke" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="1" Grid.RowSpan="1"></Canvas>
+
+        <Button x:Name="back" Click="Back_click" Grid.Column="6" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock HorizontalAlignment="Center" Text="X" FontSize="40em"/>
+        </Button>
+
+        <TextBlock x:Name="textblockTitel" Grid.Row="0" Grid.Column="0" FontSize="50em" >
+            <Bold><Run Text="SpelRegels" /></Bold>
+        </TextBlock>
+        
+        <TextBlock x:Name="textblockSpelRegels" Grid.Row="1" FontSize="20em">
+            <Bold><Run Text="Het doel van het spel"/><LineBreak /></Bold>
+            <Run Text="Doel van het spel is proberen combinaties met de dobbelstenen te gooien, zodanig dat ze passen in de 13 categorieën en" /><LineBreak /> 
+            <Run Text="zo de hoogste score opleveren. Bij iedere beurt mag u maximaal drie keer gooien," /><LineBreak />
+            <Run Text="hoewel u na de eerste of tweede worp mag stoppen." /><LineBreak />
+            <Run Text="je kunt dobbelstenen ook opzij leggen en met de andere dobbelstenen gooien om zo het gewenste resultaat te bereiken." /><LineBreak />
+            <LineBreak />
+            <Bold><Run Text="Combinaties maken:" /><LineBreak /></Bold>
+            <Run Text="Van de enen naar de zessen: Gooi één of meer enen, tel ze op en vul de score in in het speciale enen-vakje; " /><LineBreak />
+            <Run Text="gooi één of meer tweeën, tel ze op en vul de score in in het tweeën-vakje, enzovoorts" /><LineBreak />
+            <Run Text="Three of a kind: als u drie dezelfde dobbelstenen heeft. Hier wordt de waarde van de vijf dobbelstenen bij u score opgeteld." /> <LineBreak />
+            <Run Text="Dus bijvoorbeeld drie vijven, een twee en een vier, geven u dan 21 punten." /><LineBreak />
+            <Run Text="Carré: idem als three of akind, maar dan vier dezelfde dobbelstenen." /><LineBreak />
+            <Run Text="Full House: gooi twee dezelfde en drie dezelfde nummers, dus bv. twee enen en drie tweeën. Dit levert u 25 punten op." /><LineBreak />
+            <Run Text="Kleine Straat: als u vier opeenvolgende nummers gooit, bijvoorbeeld 2, 3, 4 en 5. Dit levert u 30 punten op" /><LineBreak />
+            <Run Text="Grote Straat: als u vijf opeenvolgende nummers gooit. Dit levert 40 punten op." /><LineBreak />
+            <Run Text="Yahtzee: als u vijf dezelfde nummers heeft gegooid. Dit levert 50 punten op." /><LineBreak />
+            <Run Text="Chance: dit is de som van alle dobbelstenen, zonder enige voorwaarde daaraan verbonden." /><LineBreak />
+            <LineBreak />
+            <Bold><Run Text="Winnaar Yahtzee:" /><LineBreak /></Bold>
+            <Run Text="Winnaar is de speler met de meeste punten nadat alle spelers hun 13 vakjes hebben ingevuld " /><LineBreak />
+            <Run Text=" en hun scores en bonuspunten hebben opgeteld" />
+        </TextBlock>
+        <Image Source="Assets/yahtzeeimg.jpg" Grid.Column="0" Grid.Row="3"></Image>
+    </Grid>
+</Page>
