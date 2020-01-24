@@ -1,3 +1,3 @@
 # Yahtzee
 Yahtzee opdrachten
-Dit is onze Yathzee opdracht
+de dobbelstenen die we gebruiken staan in stap 1
