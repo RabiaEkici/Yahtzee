@@ -31,6 +31,7 @@ namespace Yahtzee
 
         }
 
+        //de comments zijn gemaakt door Emre en Sten
         //variabelen die in dit programma worden gebruikt
         public int totalnumber;
         public int number1;
@@ -100,38 +101,39 @@ namespace Yahtzee
             }
         }
       
-        //de comments zijn gemaakt door Emre en Sten
+       
         //Sten's opdrachten beginnen hier
         public void Throw_click(object sender, RoutedEventArgs e)
         {
-
-            Random rnd = new Random();
-            number1 =  rnd.Next(1, 7);
-            number2 =  rnd.Next(1, 7);
-            number3 =  rnd.Next(1, 7);
-            number4 =  rnd.Next(1, 7);
-            number5 =  rnd.Next(1, 7);
-            dice1.Text = "";
-            dice2.Text = "";
-            dice3.Text = "";
-            dice4.Text = "";
-            dice5.Text = "";
-            string diceroll1 = string.Empty;
-            string diceroll2 = string.Empty;
-            string diceroll3 = string.Empty;
-            string diceroll4 = string.Empty;
-            string diceroll5 = string.Empty;
-            diceroll1 += number1;
-            diceroll2 += number2;
-            diceroll3 += number3;
-            diceroll4 += number4;
-            diceroll5 += number5;
-            dice1.Text += diceroll1;
-            dice2.Text += diceroll2;
-            dice3.Text += diceroll3;
-            dice4.Text += diceroll4;
-            dice5.Text += diceroll5;
-
+            if (textboxYahtzeeScore.Text.Length < 2)
+            {
+                Random rnd = new Random();
+                number1 = rnd.Next(1, 7);
+                number2 = rnd.Next(1, 7);
+                number3 = rnd.Next(1, 7);
+                number4 = rnd.Next(1, 7);
+                number5 = rnd.Next(1, 7);
+                dice1.Text = "";
+                dice2.Text = "";
+                dice3.Text = "";
+                dice4.Text = "";
+                dice5.Text = "";
+                string diceroll1 = string.Empty;
+                string diceroll2 = string.Empty;
+                string diceroll3 = string.Empty;
+                string diceroll4 = string.Empty;
+                string diceroll5 = string.Empty;
+                diceroll1 += number1;
+                diceroll2 += number2;
+                diceroll3 += number3;
+                diceroll4 += number4;
+                diceroll5 += number5;
+                dice1.Text += diceroll1;
+                dice2.Text += diceroll2;
+                dice3.Text += diceroll3;
+                dice4.Text += diceroll4;
+                dice5.Text += diceroll5;
+            }
             ButtonsVisibilityFalse();
 
             // Emre's opdrachten beginnen hier
